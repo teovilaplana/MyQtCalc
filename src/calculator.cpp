@@ -37,7 +37,7 @@ void calculator::digitPressed(QVariant op, QObject *display) {
     if (m_lastOp == "π" || m_lastOp == "e")
         return;
     // handle mathematical constants
-    auto max_digits = display->property("maxDigits");
+    QVariant max_digits = display->property("maxDigits");
     qDebug("Max Display digits %d", max_digits.toInt());
     if (op == "π"){
         m_lastOp = op.toString();
